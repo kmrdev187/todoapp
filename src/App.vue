@@ -51,6 +51,7 @@ export default {
 ::after,
 ::before {
   box-sizing: border-box;
+  transition: all 0.2s;
 }
 body,
 html {

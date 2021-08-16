@@ -36,20 +36,39 @@
       </div>
     </template>
     <div class="container" v-else>
-      <h1>Thank you for using this app</h1>
-      <h3>The source is on my <a href="">github</a> page</h3>
+      <h1>Contacts</h1>
       <div class="socials">
-        <img :src="iconGithub" />
-        <img :src="iconVue" />
-        <img :src="iconLinkedIn" />
+        <img
+          @click="openExternal('https://github.com/kmrdev187')"
+          src="https://s2.svgbox.net/social.svg?ic=github"
+        />
+        <img
+          @click="openExternal('https://twitter.com/koos_mark')"
+          src="https://s2.svgbox.net/social.svg?ic=twitter&color=1A91DA"
+        />
+        <img
+          @click="openExternal('https://codepen.io/kmrdev187')"
+          src="https://s2.svgbox.net/social.svg?ic=codepen"
+        />
+      </div>
+      <h1>How to</h1>
+      <div class="howto">
+        <div class="howto__item">
+          <img :src="mouseRight" />
+          <span>delete item</span>
+        </div>
+        <div class="howto__item">
+          <img :src="mouseLeft" />
+          <span>mark as done</span>
+        </div>
       </div>
     </div>
-    <!-- <pre>{{ getList }}</pre> -->
   </div>
 </template>
 
 <script>
 import { focus } from "vue-focus";
+import { shell } from "electron";
 
 export default {
   name: "board",
@@ -58,9 +77,8 @@ export default {
     return {
       newTodoModel: "",
       visible: false,
-      iconGithub: require("@/assets/gh.png"),
-      iconLinkedIn: require("@/assets/li.png"),
-      iconVue: require("@/assets/vue.png"),
+      mouseRight: require("@/assets/mouse_right.png"),
+      mouseLeft: require("@/assets/mouse_left.png"),
     };
   },
   props: ["data"],
@@ -102,6 +120,9 @@ export default {
       this.visible = false;
       this.newTodoModel = "";
     },
+    openExternal: function (url) {
+      shell.openExternal(url);
+    },
   },
 };
 </script>
@@ -118,8 +139,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h1,
-    h3 {
+
+    h1 {
       color: #586e79;
       margin: 0.2em 0;
       user-select: none;
@@ -131,12 +152,29 @@ export default {
 
     .socials {
       img {
-        width: 42px;
-        margin: 1em 0.5em;
+        width: 2.8rem;
+        margin: 2rem 1.5rem;
         user-select: none;
         -webkit-user-drag: none;
-        transition: all 0.2s ease-out;
         cursor: pointer;
+      }
+    }
+
+    .howto {
+      .howto__item {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+
+        img {
+          width: 2rem;
+          height: auto;
+          margin-right: 1rem;
+        }
+
+        span {
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -206,9 +244,6 @@ export default {
         height: 100%;
         border-radius: 3px;
         background-color: #72b46f;
-        // background-image: url("~@/assets/checkbox-inner.png");
-        // background-position: center;
-        // background-size: contain;
       }
     }
 
