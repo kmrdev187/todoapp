@@ -86,7 +86,7 @@ export default {
   -webkit-app-region: drag;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border);
 
   & > * {
     -webkit-app-region: no-drag;
@@ -96,7 +96,7 @@ export default {
     margin-left: 1em;
     font-size: 1.2em;
     pointer-events: none;
-    color: white;
+    color: var(--appbar-title);
   }
 
   .win-btns {
@@ -112,11 +112,11 @@ export default {
       align-items: center;
 
       &:first-child:hover {
-        background-color: #d51425;
+        background-color: var(--close);
       }
 
       &:hover {
-        background-color: #3c474c;
+        background-color: var(--hover);
       }
 
       svg {
@@ -124,7 +124,7 @@ export default {
         height: 20px;
 
         path {
-          fill: white;
+          fill: var(--appbar-button);
         }
       }
     }
@@ -138,13 +138,12 @@ export default {
     height: 10px;
     width: 32px;
     border-radius: 8px;
-    background-color: #3c474c;
+    background-color: var(--hover);
     cursor: pointer;
     &:after {
-      content: "\1F311"; //moon emoji
+      content: "\1F311";
       position: absolute;
       top: -3px;
-      // left: 0;
       left: -3px;
       width: 16px;
       height: 16px;
@@ -152,14 +151,11 @@ export default {
       line-height: 16px;
       letter-spacing: -6px;
       border-radius: 50%;
-      // background-color: #586e79;
       transition: all 0.2s ease;
     }
     &:checked:after {
-      content: "☀️"; //sun emoji
-      // left: 16px;
+      content: "☀️";
       left: 13px;
-      // background-color: #72b46f;
     }
   }
 }

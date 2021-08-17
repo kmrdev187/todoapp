@@ -84,13 +84,13 @@ export default {
   min-width: 200px;
   max-width: 200px;
   height: 100%;
-  border-right: 1px solid black;
+  border-right: 1px solid var(--border);
 
   .new-list {
     margin: 0.5em auto;
     padding: 0.5em 1em;
     width: max-content;
-    color: #586e79;
+    color: var(--secondary);
     border-radius: 0.5em;
     cursor: pointer;
     display: flex;
@@ -100,17 +100,17 @@ export default {
       width: 24px;
       height: 24px;
       path {
-        fill: #586e79;
+        fill: var(--secondary);
       }
     }
 
     &:hover {
-      background-color: #3c474c;
+      background-color: var(--hover);
     }
   }
 
   .new-list-input {
-    background-color: #3c474c;
+    background-color: var(--hover);
     display: flex;
     input[type="text"] {
       appearance: none;
@@ -118,8 +118,8 @@ export default {
       height: 28px;
       margin-left: 0.9em;
       outline: none;
-      background-color: #3c474c;
-      color: #586e79;
+      background-color: var(--hover);
+      color: var(--secondary);
       font: inherit !important;
     }
   }

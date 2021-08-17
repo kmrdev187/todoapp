@@ -75,13 +75,13 @@ export default {
 
 <style lang="scss" scoped>
 .selected {
-  background-color: #3c474c;
+  background-color: var(--hover);
 }
 
 .list-item {
   margin: 0.5em 0;
   padding: 0.2em 1em;
-  color: #586e79;
+  color: var(--secondary);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -95,17 +95,17 @@ export default {
 
     &:hover {
       path {
-        fill: #cf4638;
+        fill: var(--delete);
       }
     }
 
     path {
-      fill: #586e79;
+      fill: var(--secondary);
     }
   }
 
   &:hover {
-    background-color: #3c474c;
+    background-color: var(--hover);
   }
 
   span {

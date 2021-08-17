@@ -1,9 +1,9 @@
 <template>
-  <div id="app" :class="getTheme ? 'light' : ''">
-    <appbar></appbar>
+  <div id="app" :class="getTheme ? 'light' : 'dark'">
+    <appbar />
     <main>
-      <sidebar></sidebar>
-      <board :data="getListData"></board>
+      <sidebar />
+      <board :data="getListData" />
     </main>
   </div>
 </template>
@@ -46,13 +46,13 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap");
-@import "@/themes/light.scss";
 *,
 ::after,
 ::before {
   box-sizing: border-box;
   transition: all 0.2s;
 }
+
 body,
 html {
   padding: 0;
@@ -60,12 +60,38 @@ html {
   height: 100vh;
   font-family: "Nunito", sans-serif;
 }
+
+.dark {
+  --primary: #263238;
+  --secondary: #586e79;
+  --hover: #3c474c;
+  --checked: #72b46f;
+  --close: #d51425;
+  --delete: #cf4638;
+  --appbar-button: white;
+  --appbar-title: white;
+  --border: black;
+}
+
+.light {
+  --primary: #fafafa;
+  --secondary: #586e79;
+  --hover: #e1e1e1;
+  --checked: #8e5aff;
+  --close: #ea2839;
+  --delete: #cf4638;
+  --appbar-button: #90a4ae;
+  --appbar-title: #90a4ae;
+  --border: #80cbc4;
+}
+
 #app {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #263238;
+  background-color: var(--primary);
 }
+
 main {
   display: flex;
   flex: 1;

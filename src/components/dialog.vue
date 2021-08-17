@@ -43,7 +43,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 2;
   display: flex;
   align-items: center;
@@ -53,7 +53,7 @@ export default {
     width: max-content;
     height: 8rem;
     padding: 1rem;
-    background: white;
+    background: var(--primary);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ export default {
     h1 {
       margin-top: 0;
       font-size: 1.5rem;
-      color: black;
+      color: var(--secondary);
     }
 
     .dialog__form__controls {
@@ -76,7 +76,7 @@ export default {
         outline: none;
         width: max-content;
         max-width: max-content;
-        padding: 0.4rem 1rem;
+        padding: 0.3rem 0.6rem;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;

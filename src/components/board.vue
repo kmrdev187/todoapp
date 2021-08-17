@@ -155,7 +155,7 @@ export default {
     align-items: center;
 
     h1 {
-      color: #586e79;
+      color: var(--secondary);
       margin: 0.2em 0;
       user-select: none;
       a {
@@ -188,6 +188,7 @@ export default {
 
         span {
           font-size: 1.2rem;
+          color: var(--secondary);
         }
       }
     }
@@ -197,7 +198,7 @@ export default {
     margin: 0.5em;
     padding: 0.5em 1em;
     width: max-content;
-    color: #586e79;
+    color: var(--secondary);
     border-radius: 0.5em;
     cursor: pointer;
     display: flex;
@@ -207,12 +208,12 @@ export default {
       width: 24px;
       height: 24px;
       path {
-        fill: #586e79;
+        fill: var(--secondary);
       }
     }
 
     &:hover {
-      background-color: #3c474c;
+      background-color: var(--hover);
     }
   }
 
@@ -226,8 +227,8 @@ export default {
       height: 28px;
       font: inherit !important;
       flex: 1;
-      background-color: #3c474c;
-      color: #586e79;
+      background-color: var(--hover);
+      color: var(--secondary);
     }
   }
 
@@ -238,7 +239,7 @@ export default {
   .item {
     margin: 0.2em 1em 0.2em 0.5em;
     display: flex;
-    color: #586e79;
+    color: var(--secondary);
 
     input[type="checkbox"] {
       position: relative;
@@ -247,7 +248,7 @@ export default {
       width: 14px;
       height: 14px;
       border-radius: 3px;
-      background-color: #3c474c;
+      background-color: var(--hover);
 
       &:checked:after {
         content: "";
@@ -257,7 +258,7 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 3px;
-        background-color: #72b46f;
+        background-color: var(--checked);
       }
     }
 
