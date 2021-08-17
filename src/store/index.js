@@ -34,7 +34,8 @@ export default new Vuex.Store({
 
       if (
         localStorage.getItem("selected") !== null &&
-        localStorage.getItem("selected") !== ""
+        localStorage.getItem("selected") !== "" &&
+        Number.parseInt(localStorage.getItem("selected")) >= 0
       ) {
         state.selectedList = Number.parseInt(localStorage.getItem("selected"));
       }
@@ -58,6 +59,9 @@ export default new Vuex.Store({
       state.lists.push(item);
     },
     removeItem(state, id) {
+      //decreases the index of the selected list because the length of the array is reduced by one
+      if (state.selectedList - 1 >= 0) state.selectedList -= 1;
+      else state.selectedList = 0;
       //get item index by item id
       const removeIndex = state.lists
         .map((item) => {
@@ -66,9 +70,6 @@ export default new Vuex.Store({
         .indexOf(id);
       //remove item from lists array by index
       state.lists.splice(removeIndex, 1);
-      //decreases the index of the selected list because the length of the array is reduced by one
-      if (state.selectedList - 1 >= 0) state.selectedList -= 1;
-      else state.selectedList = 0;
     },
     selectItem(state, index) {
       //get item index by item id

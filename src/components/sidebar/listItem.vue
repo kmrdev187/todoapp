@@ -4,12 +4,18 @@
     :class="{ selected: getSelectedItem == listID }"
     @click="selectItem"
   >
+    <v-dialog
+      dialog-text="Delete list?"
+      v-model="dialog"
+      @resultok="removeSelf()"
+    />
     <span>{{ listTitle }}</span>
     <svg
+      ref="deleteItem"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      @click.stop="removeSelf"
+      @click="dialog = true"
     >
       <g
         fill="none"
@@ -31,8 +37,11 @@
 </template>
 
 <script>
+import vDialog from "@/components/dialog.vue";
+
 export default {
   name: "listItem",
+  components: { vDialog },
   props: {
     listTitle: {
       type: String,
@@ -41,12 +50,19 @@ export default {
       type: Number,
     },
   },
+  data() {
+    return {
+      dialog: false,
+    };
+  },
   methods: {
     removeSelf: function () {
       this.$store.commit("removeItem", this.listID);
     },
-    selectItem: function () {
-      this.$store.commit("selectItem", this.listID);
+    selectItem: function (event) {
+      if (event.target.classList.contains("list-item")) {
+        this.$store.commit("selectItem", this.listID);
+      }
     },
   },
   computed: {

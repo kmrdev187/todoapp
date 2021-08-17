@@ -55,11 +55,6 @@ import { ipcRenderer } from "electron";
 
 export default {
   name: "appbar",
-  data() {
-    return {
-      // isLight: false,
-    };
-  },
   methods: {
     minWin: function () {
       ipcRenderer.send("minimize-win");

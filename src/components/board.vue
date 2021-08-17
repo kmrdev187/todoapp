@@ -1,5 +1,10 @@
 <template>
   <div class="board">
+    <v-dialog
+      dialog-text="Delete item?"
+      v-model="dialog"
+      @resultok="removeTodo(todoID)"
+    />
     <template v-if="data != null">
       <div class="new-todo" @click="visible = true">
         <svg
@@ -19,7 +24,7 @@
         class="item"
         v-for="(n, i) in data.todos"
         :key="i"
-        @contextmenu="removeTodo(n.id)"
+        @contextmenu="(todoID = n.id), (dialog = true)"
       >
         <input :id="i" type="checkbox" v-model="n.done" />
         <label :for="i" :class="{ done: n.done }">{{ n.text }}</label>
@@ -61,6 +66,10 @@
           <img :src="mouseLeft" />
           <span>mark as done</span>
         </div>
+        <div class="howto__item">
+          <img :src="save" />
+          <span>save automatically on exit</span>
+        </div>
       </div>
     </div>
   </div>
@@ -69,16 +78,21 @@
 <script>
 import { focus } from "vue-focus";
 import { shell } from "electron";
+import vDialog from "@/components/dialog.vue";
 
 export default {
   name: "board",
+  components: { vDialog },
   directives: { focus: focus },
   data() {
     return {
       newTodoModel: "",
       visible: false,
+      dialog: false,
+      todoID: null,
       mouseRight: require("@/assets/mouse_right.png"),
       mouseLeft: require("@/assets/mouse_left.png"),
+      save: require("@/assets/save.png"),
     };
   },
   props: ["data"],
