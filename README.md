@@ -10,18 +10,38 @@
 
 ## Project setup
 
+### Clone repo
+
+```shell
+> git clone https://github.com/kmrdev187/todoapp.git
 ```
-yarn install
+
+### Install project dependencies
+
+```shell
+> yarn install
+```
+
+```shell
+> npm install
 ```
 
 ### Compiles and hot-reloads for development
 
+```shell
+> yarn electron:serve
 ```
-yarn electron:serve
+
+```shell
+> npm run electron:serve
 ```
 
 ### Compiles and minifies for production
 
+```shell
+> yarn electron:build
 ```
-yarn electron:build
+
+```shell
+> npm run electron:build
 ```
