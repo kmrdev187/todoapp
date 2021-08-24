@@ -22,26 +22,14 @@
 > yarn install
 ```
 
-```shell
-> npm install
-```
-
 ### Compiles and hot-reloads for development
 
 ```shell
 > yarn electron:serve
 ```
 
-```shell
-> npm run electron:serve
-```
-
 ### Compiles and minifies for production
 
 ```shell
 > yarn electron:build
-```
-
-```shell
-> npm run electron:build
 ```

@@ -113,6 +113,7 @@ export default {
     background-color: var(--hover);
     display: flex;
     input[type="text"] {
+      width: 100%;
       appearance: none;
       border: 0;
       height: 28px;

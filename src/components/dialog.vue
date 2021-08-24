@@ -3,7 +3,7 @@
     <div class="dialog__form">
       <h1>{{ dialogText }}</h1>
       <div class="dialog__form__controls">
-        <button @click="okClick()" class="dialog-button --ok">Ok</button>
+        <button @click="okClick()" class="dialog-button --ok">Yes</button>
         <button @click="cancelClick()" class="dialog-button --cancel">
           Cancel
         </button>
@@ -71,9 +71,10 @@ export default {
 
       .dialog-button {
         appearance: none;
-        border: 2px solid;
-        border-radius: 1rem;
         outline: none;
+        background: none;
+        border: 0;
+        border-radius: 1rem;
         width: max-content;
         max-width: max-content;
         padding: 0.3rem 0.6rem;
@@ -83,13 +84,19 @@ export default {
       }
 
       .--ok {
-        background: lighten($color: rgb(154, 235, 33), $amount: 30);
-        border-color: rgb(154, 235, 33);
+        color: rgb(154, 235, 33);
+
+        &:hover{
+          background-color: rgba(154, 235, 33, .2);
+        }
       }
 
       .--cancel {
-        background: lighten($color: rgb(240, 30, 30), $amount: 30);
-        border-color: rgb(240, 30, 30);
+        color: rgb(240, 30, 30);
+
+        &:hover{
+          background-color: rgba(240, 30, 30, .2);
+        }
       }
     }
   }

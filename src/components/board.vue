@@ -246,6 +246,7 @@ export default {
       appearance: none;
       outline: none;
       width: 14px;
+      min-width: 14px;
       height: 14px;
       border-radius: 3px;
       background-color: var(--hover);

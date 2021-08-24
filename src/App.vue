@@ -63,7 +63,7 @@ html {
 
 .dark {
   --primary: #263238;
-  --secondary: #586e79;
+  --secondary: #66808d;
   --hover: #3c474c;
   --checked: #72b46f;
   --close: #d51425;

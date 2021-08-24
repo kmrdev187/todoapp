@@ -17,11 +17,6 @@ protocol.registerSchemesAsPrivileged([
 
 let win = null;
 
-require("update-electron-app")({
-  repo: "kmrdev187/todoapp",
-  updateInterval: "10 minutes",
-});
-
 async function createWindow() {
   win = new BrowserWindow({
     minWidth: 800,

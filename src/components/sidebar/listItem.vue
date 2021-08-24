@@ -64,6 +64,9 @@ export default {
         this.$store.commit("selectItem", this.listID);
       }
     },
+    editItem: function(){
+      alert("asd")
+    }
   },
   computed: {
     getSelectedItem: function () {
