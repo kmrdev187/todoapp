@@ -1,6 +1,6 @@
 <template>
   <div class="appbar">
-    <img class="app-icon" :src="appIcon" alt="app_icon">
+    <img class="app-icon" :src="appIcon" alt="app_icon" />
     <span class="app-title">todoapp</span>
     <input type="checkbox" v-model="isLight" id="theme-selector" />
     <div class="win-btns">
@@ -56,10 +56,10 @@ import { ipcRenderer } from "electron";
 
 export default {
   name: "appbar",
-  data(){
-    return{
-      appIcon: require('@/assets/icon.png')
-    }
+  data() {
+    return {
+      appIcon: require("@/assets/icon.png"),
+    };
   },
   methods: {
     minWin: () => {
@@ -98,10 +98,11 @@ export default {
     -webkit-app-region: no-drag;
   }
 
-  .app-icon{
+  .app-icon {
+    -webkit-user-drag: none;
     width: 1.5rem;
     height: auto;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 
   .app-title {

@@ -73,12 +73,15 @@ app.on("ready", async () => {
     }
   }
 
-  //disable reload page
-  globalShortcut.register("Ctrl+R", () => {});
-  //disable debugger tools
-  globalShortcut.register("Ctrl+Shift+I", () => {});
-  //disable fullscreen
-  globalShortcut.register("F11", () => {});
+  //disable shortcuts in production mode
+  if (!isDevelopment && !process.env.IS_TEST) {
+    //disable reload page
+    globalShortcut.register("Ctrl+R", () => {});
+    //disable debugger tools
+    globalShortcut.register("Ctrl+Shift+I", () => {});
+    //disable fullscreen
+    globalShortcut.register("F11", () => {});
+  }
 
   createWindow();
 });

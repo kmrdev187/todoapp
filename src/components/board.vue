@@ -184,6 +184,7 @@ export default {
           width: 2rem;
           height: auto;
           margin-right: 1rem;
+          -webkit-user-drag: none;
         }
 
         span {

@@ -1,12 +1,18 @@
 # todoapp
 
-### Simple todo app, made with Vue & Electron
+## Simple todo app, made with Vue & Electron
 
-### :small_blue_diamond: stores data in localStorage
+!["todo_screenshot"](/screenshots/todo.jpg?raw=true "screenshot")
 
-### :small_blue_diamond: saves data on exit
+### Download from [releases](https://github.com/kmrdev187/todoapp/releases)
 
-### :small_blue_diamond: light & dark material theme
+### Features
+
+:small_blue_diamond: _stores data in local storage_
+
+:small_blue_diamond: _automatically saves data on exit_
+
+:small_blue_diamond: _light & dark material theme_
 
 ## Project setup
 
